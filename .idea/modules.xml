@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/tasks2-5.iml" filepath="$PROJECT_DIR$/tasks2-5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/epam_JF.iml" filepath="$PROJECT_DIR$/epam_JF.iml" />
+      <module fileurl="file://$PROJECT_DIR$/intro/intro.iml" filepath="$PROJECT_DIR$/intro/intro.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oop/oop.iml" filepath="$PROJECT_DIR$/oop/oop.iml" />
     </modules>
   </component>
 </project>
