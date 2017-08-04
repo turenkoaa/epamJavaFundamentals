@@ -1,6 +1,8 @@
-package main.java.t02_t03;
+package main.java.t02_t03.chanceries;
 
-public class PaperAccessory extends Chancery{
+import main.java.t02_t03.chanceries.Chancery;
+
+public class PaperAccessory extends Chancery {
 
     private int pageCount;
 

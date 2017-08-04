@@ -1,4 +1,4 @@
-package main.java.t02_t03;
+package main.java.t02_t03.chanceries;
 
 public class Chancery {
 

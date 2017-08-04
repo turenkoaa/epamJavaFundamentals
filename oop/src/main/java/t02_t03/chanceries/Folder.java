@@ -1,4 +1,6 @@
-package main.java.t02_t03;
+package main.java.t02_t03.chanceries;
+
+import main.java.t02_t03.chanceries.Chancery;
 
 public class Folder extends Chancery {
 
