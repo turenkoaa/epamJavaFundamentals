@@ -49,7 +49,7 @@ public class StationeryControlStorageTest {
 
 
     @Test
-    public void get0SumPrice() throws Exception {
+    public void getSumPrice() throws Exception {
         assertThat(storage.getSumPrice(employee), equalTo(0.0));
     }
 
