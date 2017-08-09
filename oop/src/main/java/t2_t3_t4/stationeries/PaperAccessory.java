@@ -1,8 +1,6 @@
-package main.java.t02_t03.chanceries;
+package t2_t3_t4.stationeries;
 
-import main.java.t02_t03.chanceries.Chancery;
-
-public class PaperAccessory extends Chancery {
+public class PaperAccessory extends Stationery {
 
     private int pageCount;
 
@@ -14,8 +12,8 @@ public class PaperAccessory extends Chancery {
         this.pageCount = pageCount;
     }
 
-    public PaperAccessory(int price, int pageCount) {
-        super(price);
+    public PaperAccessory(double price, String manufacture, int pageCount) {
+        super(price, manufacture);
         this.pageCount = pageCount;
     }
 }

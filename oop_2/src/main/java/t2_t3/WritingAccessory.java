@@ -1,7 +1,4 @@
-package main.java.t02_t03.chanceries;
-
-
-import main.java.t02_t03.chanceries.Chancery;
+package t2_t3;
 
 public class WritingAccessory extends Chancery {
 

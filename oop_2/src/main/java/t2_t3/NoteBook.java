@@ -1,4 +1,4 @@
-package main.java.t02_t03.chanceries;
+package t2_t3;
 
 /**
  * Created by Anastasia on 19.07.2017.
