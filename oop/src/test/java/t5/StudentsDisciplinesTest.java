@@ -1,12 +1,9 @@
 package t5;
 
-
-import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -14,23 +11,32 @@ import static org.hamcrest.core.IsEqual.equalTo;
 
 public class StudentsDisciplinesTest {
 
-    @Before
-    public void init() throws Exception {
-    }
-    @Test
-    void groupsTest() {
+    private static Student student1;
+    private static Student student2;
+    private static Student student3;
+    private static Student student4;
+    private static Student student5;
+    private static Student student6;
 
-        Student student1 = new Student();
-        Student student2 = new Student();
-        Student student3 = new Student();
-        Student student4 = new Student();
-        Student student5 = new Student();
-        Student student6 = new Student();
+    private static Group<Integer> group1;
+    private static Group<Integer> group2;
+    private static  Group<Double> group3;
+    private static Group<Double> group4;
 
-        Group<Integer> group1 = new Group<>(Group.Discipline.ALGEBRA);
-        Group<Integer> group2 = new Group<>(Group.Discipline.GEOMETRY);
-        Group<Double> group3 = new Group<>(Group.Discipline.C);
-        Group<Double> group4 = new Group<>(Group.Discipline.JAVA);
+    @BeforeClass
+    public static void init() throws Exception {
+
+        student1 = new Student();
+        student2 = new Student();
+        student3 = new Student();
+        student4 = new Student();
+        student5 = new Student();
+        student6 = new Student();
+
+        group1 = new Group<>(Group.Discipline.ALGEBRA);
+        group2 = new Group<>(Group.Discipline.GEOMETRY);
+        group3 = new Group<>(Group.Discipline.C);
+        group4 = new Group<>(Group.Discipline.JAVA);
 
         group1.addStudent(student1, 5);
         group1.addStudent(student2, 4);
@@ -53,8 +59,13 @@ public class StudentsDisciplinesTest {
         group4.addStudent(student3, 3.4);
         group4.addStudent(student4, 2.1);
         group4.addStudent(student5, 1.9);
+    }
+
+    @Test
+    public void disciplinesTest() {
 
         Journal journal = new Journal();
+
         journal.addGroup(group1);
         journal.addGroup(group2);
         journal.addGroup(group3);
@@ -69,4 +80,15 @@ public class StudentsDisciplinesTest {
 
         assertThat(journal.getMarksInGroupsOfStudent(student1).keySet(), equalTo(disciplinesOfStudent1));
     }
+
+    /*@Test
+    public void marksTest(){
+        Journal journal = new Journal();
+
+        journal.addGroup(group1);
+        journal.addGroup(group2);
+        journal.addGroup(group4);
+
+        assertThat(journal.getGratestMarkOfSturent(student2)[0], equalTo(4.2));
+    }*/
 }

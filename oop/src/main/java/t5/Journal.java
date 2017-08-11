@@ -1,9 +1,6 @@
 package t5;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 
 public class Journal {
@@ -40,6 +37,19 @@ public class Journal {
         return result;
     }
 
+    /*public Collection<Number> getGratestMarkOfSturent(Student student){
 
+        List<Map.Entry<Group.Discipline, Number>> list =
+                new LinkedList<>(getMarksInGroupsOfStudent(student).entrySet());
+
+        Collections.sort(list, (o1, o2) -> (o1.getValue()).compareTo(o2.getValue()));
+
+        Map<Group.Discipline, Number> result = new LinkedHashMap<>();
+        for (Map.Entry<Group.Discipline, Number> entry : list) {
+            result.put(entry.getKey(), entry.getValue());
+        }
+
+        return result.values();
+    }*/
 
 }
