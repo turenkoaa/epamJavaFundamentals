@@ -1,7 +1,9 @@
-import com.sun.xml.internal.messaging.saaj.util.ByteOutputStream;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
 import static org.hamcrest.CoreMatchers.containsString;
@@ -10,7 +12,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 public class CrazyLoggerTest {
     private static CrazyLogger log;
     private PrintStream out = System.out;
-    private ByteOutputStream testStream = new ByteOutputStream();
+    private ByteArrayOutputStream testStream = new ByteArrayOutputStream();
     private PrintStream ps = new PrintStream(testStream);
 
     @BeforeEach
@@ -27,7 +29,7 @@ public class CrazyLoggerTest {
         log.findInfo("one");
 
         System.setOut(out);
-        String result = new String(testStream.getBytes()).trim();
+        String result = new String(testStream.toString()).trim();
         assertThat(result, containsString("One message"));
         assertThat(result, containsString("Twenty one message"));
     }
