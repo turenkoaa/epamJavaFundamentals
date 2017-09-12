@@ -8,9 +8,11 @@ import java.util.Map;
 import java.util.Properties;
 
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertNull;
 
-class PropertyReaderTest {
+public class PropertyReaderTest {
+
     Properties testProperties;
     PropertyReader propertyReader;
 
@@ -27,27 +29,26 @@ class PropertyReaderTest {
     }
 
     @Test
-    public void readAllTest() throws Exception {
-        propertyReader.readProperties("src/test/resources/file_not_exist.testProperties");
+    public void readProperties() throws Exception {
+        propertyReader.readProperties("src/test/resources/file_not_exist.properties");
         assertNull(propertyReader.getProperties());
 
         Map<Object, Object> testPropertiesMap = new HashMap<>();
         testPropertiesMap.putAll(testProperties);
         propertyReader.readProperties("src/test/resources/test.properties");
-        assertThat(propertyReader.getProperties(), Is.is(testPropertiesMap));
+
+        assertThat(propertyReader.getProperties(), is(testPropertiesMap));
     }
-/*
+
     @Test
-    public void readValueTest() throws Exception {
-        PropertiesReader pr = new PropertiesReader();
+    public void getProperty() throws Exception {
+        PropertyReader pr = new PropertyReader();
 
-        String value = pr.readValue("src/test/resources/forTest.testProperties", "parameter1");
+        assertThat(pr.getProperty("src/test/resources/test.properties", "key1"),
+                is(testProperties.getProperty("key1")));
 
-        assertThat(value, is(testProperties.getProperty("parameter1")));
-
-        value = pr.readValue("src/test/resources/forTest.testProperties", "parameter10");
-
-        assertThat(value, is("No value found for the key parameter10"));
+        assertThat(pr.getProperty("src/test/resources/test.properties", "key3"),
+                is("No property with key key3"));
     }
-    */
+
 }
