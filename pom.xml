@@ -13,6 +13,7 @@
         <module>oop</module>
         <module>strings</module>
         <module>collections</module>
+        <module>exceptions</module>
     </modules>
 
     <build>
