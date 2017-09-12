@@ -1,6 +1,6 @@
 import org.hamcrest.core.Is;
 import org.junit.Before;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.io.FileOutputStream;
 import java.util.HashMap;

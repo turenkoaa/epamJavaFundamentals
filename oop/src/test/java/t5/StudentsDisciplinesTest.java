@@ -81,6 +81,7 @@ public class StudentsDisciplinesTest {
         assertThat(journal.getMarksInGroupsOfStudent(student1).keySet(), equalTo(disciplinesOfStudent1));
     }
 
+
     /*@Test
     public void marksTest(){
         Journal journal = new Journal();
