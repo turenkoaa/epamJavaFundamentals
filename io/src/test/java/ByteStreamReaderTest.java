@@ -36,20 +36,22 @@ public class ByteStreamReaderTest {
         map.put("if", 1);
 
         Map<String, Integer> resultMap = new HashMap<>();
-        InputStream inputStream = new FileInputStream("output.txt");
+        InputStream inputStream = new FileInputStream("src\\test\\resources\\output.txt");
         int i;
         StringBuilder stringBuilder = new StringBuilder();
         String key = null;
-        int value;
+        Integer value;
         while ((i = inputStream.read()) > 0) {
             if (i == ' ') {
                 key = stringBuilder.toString();
                 stringBuilder = new StringBuilder();
             } else if (i == '\n') {
-                value = new Integer(stringBuilder.toString());
+                value = Integer.valueOf(stringBuilder.toString());
                 stringBuilder = new StringBuilder();
                 resultMap.put(key, value);
-            } else {
+            } else if (i == '\r') {
+                //nop
+            }else {
                 stringBuilder.append((char)i);
             }
         }
