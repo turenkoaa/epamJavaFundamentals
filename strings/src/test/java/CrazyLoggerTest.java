@@ -1,8 +1,7 @@
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.Before;
+import org.junit.Test;
 
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
@@ -10,13 +9,16 @@ import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 public class CrazyLoggerTest {
-    private static CrazyLogger log;
-    private PrintStream out = System.out;
-    private ByteArrayOutputStream testStream = new ByteArrayOutputStream();
-    private PrintStream ps = new PrintStream(testStream);
+    private CrazyLogger log;
+    private PrintStream out;
+    private ByteArrayOutputStream testStream;
+    private PrintStream ps;
 
-    @BeforeEach
+    @Before
     public void init() {
+        out = System.out;
+        testStream = new ByteArrayOutputStream();
+        ps = new PrintStream(testStream);
         log = new CrazyLogger();
         log.add("One message");
         log.add("Two message");
