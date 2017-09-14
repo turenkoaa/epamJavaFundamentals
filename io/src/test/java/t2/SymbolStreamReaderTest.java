@@ -1,7 +1,6 @@
 package t2;
 
 import org.junit.Test;
-import t1.ByteStreamReader;
 
 import java.io.FileInputStream;
 import java.io.InputStream;
@@ -13,8 +12,8 @@ import static org.junit.Assert.*;
 public class SymbolStreamReaderTest {
     @Test
     public void writeWordsCount() throws Exception {
-        ByteStreamReader byteStreamReader = new ByteStreamReader("src\\test\\resources\\input.txt", "src\\test\\resources\\output.txt");
-        byteStreamReader.writeWordsCount();
+        SymbolStreamReader symbolReader = new SymbolStreamReader("src\\test\\resources\\input.txt", "src\\test\\resources\\output.txt");
+        symbolReader.writeWordsCount();
         Map<String, Integer> map = new HashMap<>();
         map.put("new", 1);
         map.put("synchronized", 1);

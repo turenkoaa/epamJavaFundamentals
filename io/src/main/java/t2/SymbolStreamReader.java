@@ -60,11 +60,10 @@ public class SymbolStreamReader {
 
     private void write( Map<String, Integer> wordsCount) {
 
-        try (Writer f = new BufferedWriter(new FileWriter(outFileName, false))) {
+        try (OutputStreamWriter output = new FileWriter(outFileName);) {
             for (Map.Entry<String, Integer> entry : wordsCount.entrySet()) {
-                f.write(String.valueOf(String.format("%s %d%n", entry.getKey(), entry.getValue()).getBytes()));
+                output.write(String.format("%s %d%n", entry.getKey(), entry.getValue()));;
             }
-            f.flush();
         } catch (IOException | SecurityException e) {
             e.printStackTrace();
         }
