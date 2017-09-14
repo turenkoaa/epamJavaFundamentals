@@ -1,19 +1,12 @@
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Ignore;
+package t1;
+
 import org.junit.Test;
 
-import java.io.BufferedInputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 import static org.junit.Assert.*;
 
